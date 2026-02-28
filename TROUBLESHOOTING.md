@@ -118,6 +118,54 @@ import './Login.css'  // 在 Login.tsx 中
 ```
 src/pages/
   ├── Login.tsx
+
+### 3. 静态资源无法加载
+
+**问题描述**: Logo 和图标无法显示，显示为破损的图片图标
+
+**原因**:
+- 静态资源文件不存在
+- 文件路径错误
+- 浏览器缓存问题
+
+**解决方案**:
+
+#### 检查静态资源文件是否存在
+```bash
+ls -la public/images/
+```
+
+应该看到以下文件：
+- icon-email.svg
+- icon-eye-closed.svg
+- icon-eye.svg
+- icon-lock.svg
+- logo.svg
+
+#### 检查代码引用路径
+确保使用的是本地路径，不是外部 URL：
+```tsx
+// ✅ 正确 - 使用本地路径
+src="/images/logo.svg"
+
+// ❌ 错误 - 不要使用外部 CDN（可能 403）
+src="https://coze-coding-project.tos.coze.site/demo/login/logo.png"
+```
+
+#### 清除浏览器缓存
+1. 打开浏览器开发者工具（F12）
+2. 右键点击刷新按钮
+3. 选择"清空缓存并硬性重新加载"
+
+#### 检查网络请求
+在开发者工具的 Network 标签页中：
+1. 刷新页面
+2. 查找 SVG 图片请求
+3. 确保状态码是 200（成功）
+4. 如果是 404，检查文件名和路径是否正确
+
+### 4. Mock 服务未启动
+
   ├── Login.css
   ├── Home.tsx
   └── ForgotPassword.tsx
