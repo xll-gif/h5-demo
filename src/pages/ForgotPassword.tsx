@@ -67,7 +67,7 @@ export default function ForgotPassword() {
           <div className="forgot-password-header">
             <div className="logo">
               <img
-                src="https://coze-coding-project.tos.coze.site/demo/login/logo.png"
+                src="/images/logo.svg"
                 alt="Logo"
                 className="logo-image"
               />
@@ -103,7 +103,7 @@ export default function ForgotPassword() {
         <div className="forgot-password-header">
           <div className="logo">
             <img
-              src="https://coze-coding-project.tos.coze.site/demo/login/logo.png"
+              src="/images/logo.svg"
               alt="Logo"
               className="logo-image"
             />
@@ -126,7 +126,7 @@ export default function ForgotPassword() {
             </label>
             <div className="input-wrapper">
               <img
-                src="https://coze-coding-project.tos.coze.site/demo/login/icon-email.png"
+                src="/images/icon-email.svg"
                 alt="Email"
                 className="input-icon"
               />

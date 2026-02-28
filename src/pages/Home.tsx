@@ -37,7 +37,7 @@ export default function Home() {
         <header className="home-header">
           <div className="logo">
             <img
-              src="https://coze-coding-project.tos.coze.site/demo/login/logo.png"
+              src="/images/logo.svg"
               alt="Logo"
               className="logo-image"
             />

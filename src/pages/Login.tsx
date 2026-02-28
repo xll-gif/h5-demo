@@ -97,7 +97,7 @@ export default function Login() {
         {/* Logo */}
         <div className="login-logo">
           <img
-            src="https://coze-coding-project.tos.coze.site/demo/login/logo.png"
+            src="/images/logo.svg"
             alt="Logo"
             className="logo-image"
           />
@@ -116,7 +116,7 @@ export default function Login() {
           <div className="form-group">
             <div className="input-wrapper">
               <img
-                src="https://coze-coding-project.tos.coze.site/demo/login/icon-email.png"
+                src="/images/icon-email.svg"
                 alt="Email"
                 className="input-icon"
               />
@@ -135,7 +135,7 @@ export default function Login() {
           <div className="form-group">
             <div className="input-wrapper">
               <img
-                src="https://coze-coding-project.tos.coze.site/demo/login/icon-lock.png"
+                src="/images/icon-lock.svg"
                 alt="Lock"
                 className="input-icon"
               />
@@ -154,7 +154,7 @@ export default function Login() {
                 disabled={loading}
               >
                 <img
-                  src="https://coze-coding-project.tos.coze.site/demo/login/icon-eye.png"
+                  src="/images/icon-eye.svg"
                   alt={showPassword ? 'Hide' : 'Show'}
                   className="eye-icon"
                 />
