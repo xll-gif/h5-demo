@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { useMock } from '../mocks/browser'
+import { authApi } from '../api'
 
 export default function ForgotPassword() {
   const navigate = useNavigate()
@@ -9,8 +8,6 @@ export default function ForgotPassword() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
-
-  useMock() // 激活 Mock 服务
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -38,20 +35,14 @@ export default function ForgotPassword() {
 
     try {
       // 调用重置密码 API
-      const response = await axios.post(
-        '/api/auth/reset-password',
-        { email },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      )
+      const response = await authApi.forgotPassword({
+        email: email
+      })
 
-      if (response.data.success) {
+      if (response.code === 200) {
         setSuccess(true)
       } else {
-        setError(response.data.message || '请求失败，请稍后重试')
+        setError(response.message || '请求失败，请稍后重试')
       }
     } catch (err: any) {
       console.error('重置密码失败:', err)
@@ -135,7 +126,7 @@ export default function ForgotPassword() {
             </label>
             <div className="input-wrapper">
               <img
-                src="https://coze-coding-project.tos.coze.site/demo/login/email-icon.png"
+                src="https://coze-coding-project.tos.coze.site/demo/login/icon-email.png"
                 alt="Email"
                 className="input-icon"
               />

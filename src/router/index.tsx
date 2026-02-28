@@ -5,11 +5,15 @@ import ForgotPassword from '../pages/ForgotPassword'
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/home',
     element: <Home />,
   },
   {
-    path: '/login',
+    path: '/',
     element: <Login />,
   },
   {
